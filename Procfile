@@ -1,1 +1,1 @@
-web: gunicorn warashatprj.wsgi --log-file -
+web: gunicorn weatherprj.wsgi --log-file -
