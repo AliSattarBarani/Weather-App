@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Weather App</title>
+
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+
+
+</head>
+
+
+<body>
+
+  {{ali}}
+  
+    <nav style="position:fixed">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo" style="margin-left: 10px">
+            <img src="{% static 'img/logo.png' %}" style="width:50px; height: 53px; padding-top:5px">
+          </a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down" style="margin-right: 30px;">
+              <li><a href="{% url 'index' %}">Home</a></li>
+              <li><a href="{% url 'about' %}">About</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <ul class="sidenav" id="mobile-demo">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+      </ul>
+              
+  
+  <div class="section no-pad-bot" id="index-banner" style="background-color: #ef9a9a">
+    <div class="container">
+      <br><br>
+      <h2 class="header center white-text">Weather App</h2>
+      <div class="row center">
+        <h5 class="header col s12  white-text">A responisve django web app to display the weather for each city</h5>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+  <br>
+
+
+  <div class="container">
+    <h4 class="header left red-text">About the app:</h4><br><br><br>
+    <p class="aboutpar">
+        This is a django web app which display the weather details for each city you want to 
+        request. The whole details such as: Countrty, Langutde, Latitude, Date/Time, Temperature, Status, Wind Degree, and Humidity.
+        This app gets the data based on API (Application Programming Interface) which 
+        served us for this purpose, so i'm here working with APIs.
+        <hr style="color: #ef9a9a">
+      </p>                
+  </div>
+
+  <br>
+  <br>
+
+  <div class="container">
+      <h4 class="header left red-text">About me:</h4><br><br><br>
+      <p class="aboutpar">
+          My name is Ali Sattar, i have 27 years old, i love to code in python and consider 
+          python as my first and preferable langaue. I have a three years of expertise in a field
+          of the programming.
+          <hr style="color: #ef9a9a">
+        </p>                
+    </div>
+
+    <br>
+    <br>
+
+  <footer class="page-footer white">
+    <div class="footer-copyright red">
+      <div class="container">
+      Designed by <a class="white-text text-lighten-3" href="#">Ali Sattar</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+
+  </body>
+</html>

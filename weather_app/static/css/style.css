@@ -1,0 +1,34 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  background-color: #ef5350 ;
+  color: white;
+  border: 2px solid #ef5350 ;
+  border-radius: 2px;
+  width: 64px;
+  height: 32px;
+}
+
+button:hover {
+  color:#333;
+  border: 1.2px solid #ef5350 ; 
+  background-color: transparent;
+}
+
+.aboutpar {
+  font-size: 18px;
+}

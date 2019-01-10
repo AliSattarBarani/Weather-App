@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Weather App</title>
+
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+
+
+</head>
+
+
+<body>
+  
+    <nav style="position:fixed">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo" style="margin-left: 10px">
+            <img src="{% static 'img/logo.png' %}" style="width:50px; height: 53px; padding-top:5px">
+          </a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down" style="margin-right: 30px;">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+          </ul>
+        </div>
+    </nav>
+    
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+    </ul>
+              
+  
+  <div class="section no-pad-bot" id="index-banner" style="background-color: #ef9a9a">
+    <div class="container">
+      <br><br>
+      <h2 class="header center white-text">Weather App</h2>
+      <div class="row center">
+        <h5 class="header col s12  white-text">A responisve django web app to display the weather for each city</h5>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+  <br>
+
+
+  <div class="container">
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="input-field col s1">
+            <select name="cityList">
+              <option> Baghdad    </option>
+              <option> Irbil      </option>
+              <option> Toronto    </option>
+              <option> Cairo      </option>
+              <option> Istanbul   </option>
+              <option> Rome       </option>
+              <option> Paris      </option>
+              <option> London     </option>
+              <option> Madrid     </option>
+              <option> Tokyo      </option>
+              <option> Duhok      </option>
+              <option> Tahran     </option>
+              <option> Amsterdam  </option>
+              <option> Lisbon     </option>
+              <option> Doha       </option>
+              <option> Damascus   </option>
+              <option> Copenhagen </option>
+              <option> Los Angeles</option>
+              <option> Moscow     </option>
+              <option> Dubai      </option>
+              <option> Munich     </option>
+              <option> Amman      </option>
+              <option> Jakarta    </option>
+              <option> Barcelona  </option>
+            </select>
+            <label>Select your city</label>
+        </div>
+
+        <button type="submit">Get</button>
+    </form>
+    
+    <br>
+ 
+    {% if city %}
+
+    <h3 class="header center red-text">{{city}}</h3><br>
+
+    <center>
+      <img src="{{icon}}" style="width:72px; height: 72px">
+    </center>
+    <br>
+
+    <table class="centered">
+          <thead>
+            <tr>
+                <th>Country</th>
+                <th>Longtude</th>
+                <th>Latitude</th>
+                <th>Data/Time</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr>
+              <td>{{country}}</td>
+              <td>{{longtude}}</td>
+              <td>{{latitude}}</td>
+              <td>{{localtime}}</td>
+            </tr>
+          </tbody>
+          
+          <thead>
+              <tr>
+                  <th>Temperature</th>
+                  <th>Status</th>
+                  <th>Wind Degree</th>
+                  <th>Humidity</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              <tr>
+                <td>{{temperature}}</td>
+                <td>{{status}}</td>
+                <td>{{wind_degree}}</td>
+                <td>{{humidity}}</td>
+              </tr>
+          </tbody>
+          
+        </table>
+                
+  </div>
+
+  
+
+  <br>
+  <br>
+
+  <footer class="page-footer white">
+    <div class="footer-copyright red">
+      <div class="container">
+      Designed by <a class="white-text text-lighten-3" href="https://www.facebook.com/AliSattarBarani" target="_blank">Ali Sattar</a>
+      </div>
+    </div>
+  </footer>
+
+  {% endif %}
+
+  <!--  Scripts--> 
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+
+  </body>
+</html>
